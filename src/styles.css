@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --health-color: #e53e3e;
+  --mana-color: #3182ce;
+  --magic-color: #63b3ed;
+  --boss-health-color: #805ad5;
+  --joystick-bg-color: rgba(255, 255, 255, 0.15);
+  --joystick-border-color: rgba(255, 255, 255, 0.3);
+  --joystick-knob-color: rgba(255, 255, 255, 0.4);
+  font-family: Lora, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.game-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+#health-bar { background: var(--health-color); }
+#mana-bar { background: var(--mana-color); }
+#menu-overlay.hidden { display: none; }
+
+.joystick-base {
+  pointer-events: auto;
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 9999px;
+  border: 2px solid var(--joystick-border-color);
+  background-color: var(--joystick-bg-color);
+}
+
+.joystick-knob {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+  background-color: var(--joystick-knob-color);
+}
+
+.action-button {
+  display: flex;
+  width: 5.625rem;
+  height: 5.625rem;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-user-select: none;
+}
+
+.action-button:active { background-color: rgba(255, 255, 255, 0.4); }
